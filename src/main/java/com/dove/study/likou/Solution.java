@@ -1,7 +1,7 @@
-package com.dove.study.algo.array_05;
+package com.dove.study.likou;
 
 /**
- * @Description: 力扣
+ * @Description: 两数之和=target
  * @Auther: qingruizhu
  * @Date: 2021/1/27 下午6:08
  */
