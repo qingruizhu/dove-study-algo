@@ -70,11 +70,50 @@ public class Graph {
         }
     }
 
+    /**
+     * 打印路径
+     **/
     private void printWay(int[] pre, int s, int t) {
         if (pre[t] != -1 && s != t) {
             printWay(pre, s, pre[t]);
         }
         System.out.println(t + " ");
+    }
+
+
+    /**
+     * 深度搜索
+     **/
+    public void dfs(int s, int t) {
+        if (s == t) return;
+        // 顶点是否被访问
+        boolean[] visited = new boolean[v];
+        // 走过的路
+        int[] pre = new int[v];
+        for (int i = 0; i < pre.length; i++) {
+            pre[i] = -1;
+        }
+        recurDfs(s, t, visited, pre);
+        printWay(pre, s, t);
+    }
+
+    private boolean found = false;// 是否找到
+
+    private void recurDfs(int s, int t, boolean[] visited, int[] pre) {
+        if (found) return;
+        visited[s] = true;
+        if (s == t) {
+            found = true;
+            return;
+        }
+        LinkedList<Integer> now = arr[s];
+        for (int i = 0; i < now.size(); i++) {
+            int nm = now.get(i);
+            if (!visited[nm]) {
+                pre[nm] = s;
+                recurDfs(nm, t, visited, pre);
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -88,12 +127,10 @@ public class Graph {
         graph.addEdge(4, 6);
         graph.addEdge(5, 7);
         graph.addEdge(6, 7);
-        graph.bfs(0, 6);
-
+        //广度
+//        graph.bfs(0, 6);
         // 深度优先
-//        graph.dfs(0, 6);
-
+        graph.dfs(0, 7);
     }
-
 
 }
