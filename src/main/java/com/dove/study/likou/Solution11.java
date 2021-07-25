@@ -1,6 +1,8 @@
 package com.dove.study.likou;
 
 /**
+ * <<<<<<< Updated upstream
+ *
  * @Description: 665. 非递减数列
  * 难度
  * 简单
@@ -34,7 +36,7 @@ package com.dove.study.likou;
  */
 public class Solution11 {
     public static void main(String[] args) {
-        int[] arr = {2, 3, 3, 2,2};
+        int[] arr = {2, 3, 3, 2, 2};
         boolean b = checkPossibility(arr);
         System.out.println(b);
 
