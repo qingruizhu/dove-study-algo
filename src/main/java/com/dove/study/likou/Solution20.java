@@ -33,6 +33,5 @@ public class Solution20 {
             Arrays.sort(matrix, (a, b) -> a[0] - b[0]);
         }
         return false;
-
     }
 }
